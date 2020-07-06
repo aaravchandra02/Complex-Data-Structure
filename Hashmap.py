@@ -103,3 +103,12 @@ hash_map.assign('gneiss', 'metamorphic')
 print(hash_map.retrieve('gabbro'))
 print(hash_map.retrieve('sandstone'))
 print(hash_map.retrieve('gneiss'))
+
+
+"""
+FOLLOW UPS:
+
+How would you delete a key-value pair from this hash map?
+Parts of the code are a little repetitive, how would you factor these roles differently?
+What should your hash map do if a key-value is added and the array is full? How does this hash map handle that?
+"""
