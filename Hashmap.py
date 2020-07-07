@@ -76,6 +76,8 @@ class HashMap:
         if possible_return_value[0] == key:
             return possible_return_value[1]
 
+        # Case when colliion is encountered with bucket having a different key.
+        # Using this value to get to a different bucket location - open addressing
         retrieval_collisions = 1
         while (possible_return_value[0] != key):
             new_hash_code = self.hash(key, retrieval_collisions)
@@ -91,6 +93,7 @@ class HashMap:
             retrieval_collisions += 1
 
 
+# Testing
 hash_map = HashMap(20)
 hash_map.assign("gneiss", "metamorphic")
 print(hash_map.retrieve("gneiss"))
