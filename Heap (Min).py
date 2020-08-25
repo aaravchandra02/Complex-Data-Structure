@@ -23,16 +23,16 @@ class MinHeap:
             return None
 
         min = self.heap_list[1]
-        print("Removing: {0} from {1}".format(min, self.heap_list))
+        print("Removing: {min} from {self.heap_list}")
         self.heap_list[1] = self.heap_list[self.count]
         self.heap_list.pop()
         self.count -= 1
-        print("Last element moved to first: {0}".format(self.heap_list))
+        print(f"Last element moved to first: {self.heap_list}")
         return min
 
     def add(self, element):
         self.count += 1
-        print("Adding: {0} to {1}".format(element, self.heap_list))
+        print("Adding: {element} to {self.heap_list}")
         self.heap_list.append(element)
         self.heapify_up()
 
@@ -41,9 +41,9 @@ class MinHeap:
         while self.parent_idx(idx) > 0:
             if self.heap_list[self.parent_idx(idx)] > self.heap_list[idx]:
                 tmp = self.heap_list[self.parent_idx(idx)]
-                print("swapping {0} with {1}".format(tmp, self.heap_list[idx]))
+                print("swapping {tmp} with {self.heap_list[idx]}")
                 self.heap_list[self.parent_idx(idx)] = self.heap_list[idx]
                 self.heap_list[idx] = tmp
             idx = self.parent_idx(idx)
-        print("HEAP RESTORED! {0}".format(self.heap_list))
+        print("HEAP RESTORED! {self.heap_list}")
         print("")
