@@ -28,17 +28,13 @@ class MinHeap:
         self.heap_list.pop()
         self.count -= 1
         print(f"Last element moved to first: {self.heap_list}")
-
-        # adding heapify down call
         self.heapify_down()
         return min
 
-    # added this function
     def heapify_down(self):
         print("Heapifying down!")
         idx = 1
 
-    # added this function
     def get_smaller_child_idx(self, idx):
         if self.right_child_idx(idx) > self.count:
             print("There is only a left child")
