@@ -14,6 +14,8 @@ class MinHeap:
     def right_child_idx(self, idx):
         return idx * 2 + 1
 
+    def child_present(self, idx):
+        return self.left_child_idx(idx) <= self.count
     # END OF HEAP HELPER METHODS
 
     # define .retrieve_min() below...
