@@ -34,8 +34,16 @@ class MinHeap:
         return min
 
     def heapify_down(self):
-        print("Heapifying down!")
         idx = 1
+        while self.child_present(idx):
+            print("Heapifying down!")
+            smaller_child_idx = self.get_smaller_child_idx(idx)
+            child = self.heap_list[smaller_child_idx]
+            parent = self.heap_list[idx]
+            if parent > child:
+                self.heap_list[idx] = child
+                self.heap_list[smaller_child_idx] = parent
+        idx = smaller_child_idx
 
     def get_smaller_child_idx(self, idx):
         if self.right_child_idx(idx) > self.count:
