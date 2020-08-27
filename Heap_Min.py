@@ -28,7 +28,34 @@ class MinHeap:
         self.heap_list.pop()
         self.count -= 1
         print(f"Last element moved to first: {self.heap_list}")
+
+        # adding heapify down call
+        self.heapify_down()
         return min
+
+    # added this function
+    def heapify_down(self):
+        print("Heapifying down!")
+        idx = 1
+
+    # added this function
+    def get_smaller_child_idx(self, idx):
+        if self.right_child_idx(idx) > self.count:
+            print("There is only a left child")
+            return self.left_child_idx(idx)  # return left child index
+        else:
+            # return left_child value
+            left_child = self.heap_list[self.left_child_idx(idx)]
+            # return right_child value
+            right_child = self.heap_list[self.right_child_idx(idx)]
+
+            # Checking which of the two child nodes are greater.
+            if(left_child < right_child):
+                print("left is greater\n")
+                return self.left_child_idx(idx)
+            else:
+                print("right is greater\n")
+                return self.right_child_idx(idx)
 
     def add(self, element):
         self.count += 1
