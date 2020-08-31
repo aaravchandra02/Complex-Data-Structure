@@ -11,3 +11,6 @@ class Vertex:
     # function to return the vertices
     def get_edges(self):
         return list(self.edges.keys())
+
+
+station = Vertex("Cronk")
