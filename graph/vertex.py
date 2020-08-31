@@ -10,4 +10,4 @@ class Vertex:
 
     # function to return the vertices
     def get_edges(self):
-        return self.edges.keys()
+        return list(self.edges.keys())
