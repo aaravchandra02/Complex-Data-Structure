@@ -1,6 +1,6 @@
 from random import randrange
 from graph import Graph
-from vertex import Vertex
+from . import Vertex
 
 
 def print_graph(graph):
