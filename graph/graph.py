@@ -30,6 +30,9 @@ class Graph:
             if current_vertex == end_vertex:
                 return True
             else:
+                # either use below two lines or the set one
+                # vertex = self.graph_dict[current_vertex]
+                # next_vertices = vertex.get_edges()
                 vertices_to_visit = set(
                     self.graph_dict[current_vertex].edges.keys())
                 start += [vertex for vertex in vertices_to_visit if vertex not in seen]
